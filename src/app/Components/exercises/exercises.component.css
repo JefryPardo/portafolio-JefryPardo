@@ -1,77 +1,52 @@
-.work__container{
-    row-gap: 2rem;
+@media screen and (min-width: 768px){
+  body{
+    margin: 0;
   }
-  .work__img{
-    box-shadow: 0 4px 25px rgba(14,36,49,.15);
-    border-radius: .5rem;
-    overflow: hidden;
+  .section{
+    padding-top: 4rem;
+    padding-bottom: 3rem;
   }
-  .work__img img{
-    transition: 1s;
-    cursor: pointer;
+  .section-title{
+    margin-bottom: var(--mb-6);
   }
-  
-
-  @media screen and (min-width: 768px){
-    body{
-      margin: 0;
-    }
-    .section{
-      padding-top: 4rem;
-      padding-bottom: 3rem;
-    }
-    .section-title{
-      margin-bottom: var(--mb-6);
-    }
-    .section-title::after{
-      width: 80px;
-      top: 3rem;
-    }
-
-    .blur{
-        filter: blur(0,8px);
-    }
-  
-    .work__container{
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2,1fr);
-      column-gap: 2rem;      
-    }
+  .section-title::after{
+    width: 80px;
+    top: 3rem;
   }
-  
-  @media screen and (min-width: 1024px){
-    .bd-grid{
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .home__img{
-      right: 10%;
-    }
+  .contact__form{
+    width: 360px;
   }
-
-
-.centrado{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color:var(--first-color);
-    background-color: white;
+  .contact__container{
+    justify-items: center;
+  }
 }
 
-.contenedor{
-    position: relative;
-    display: inline-block;
-    text-align: center;
+@media screen and (min-width: 1024px){
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home__img{
+    right: 10%;
+  }
 }
 
-.work__img{
-    box-shadow: 0 4px 25px rgba(14,36,49,.15);
-    border-radius: .5rem;
-    overflow: hidden;
+.contact__input{
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: .5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-1);
+}
+.contact__button{
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
 }
 
-.work__img img:hover{
-    transform: scale(1.1);
-    
-}
