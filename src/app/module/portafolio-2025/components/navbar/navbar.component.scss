@@ -1,0 +1,206 @@
+.navbar {
+  background-color: #f0f2f5;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 90px;
+  display: flex;
+  z-index: 5;
+  align-items: center;
+  border-bottom: 2px solid black;
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  
+    img {
+      width: 50px;
+      height: 50px;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  
+    @media (max-width: 1600px) {
+      display: block;
+      position: relative;
+      margin-left: auto;
+    }
+  
+    @media (max-width: 400px) {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10%;
+  margin: 0 auto;
+
+  @media (max-width: 1600px) {
+    padding: 0 5%;
+  }
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 1600px) {
+    display: none;
+  }
+
+  .nav-item {
+    
+    position: relative;
+    font-weight: 700;
+    font-size: 1.0rem;
+
+    .nav-link {
+      font-size: 1rem;
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      position: relative;
+      overflow: hidden;
+      z-index: 4;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: url('/assets/img/pen-brushes-amarillo.svg') no-repeat left bottom;
+        background-size: 0%;
+        background-repeat: no-repeat;
+        transition: background-size 0.4s ease-in-out;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        background-size: 100%;
+        background-position: left bottom;
+      }
+    }
+
+    .contact-link {
+      position: relative;
+      background-color: white;
+      border: 2px solid black;
+      color: black;
+      border-radius: 0;
+      padding: 10px 20px;
+      box-shadow: none;
+      text-decoration: none;
+      transition: none;
+      z-index: 4;
+
+      &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        border: 2px solid black;
+        top: 0.5px;
+        left: 0.1px;
+        width: 102%;
+        height: 105%;
+        background-color: #ffec3d;
+        border-radius: 0;
+        transform: translate(1px, 1px);
+        transition: opacity 0.4s ease-in-out;
+      }
+    
+      &:hover::before {
+        opacity: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.navbar-nav-movil {
+  
+  display: none;
+  
+  @media (max-width: 1600px) {
+    display: flex;
+  }
+}
+
+.navbar-nav-movil {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  z-index: 3;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+
+  .nav-item-movil {
+    width: 100%;
+    .nav-link-movil {
+      display: block;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: black;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #ffec3d;
+    }
+
+    &:active {
+      background-color: #ffec3d;
+    }
+  }
+}
+
+.fila-superior {
+
+  border-top: 2px solid black;
+}
+
+.fila-inferior {
+
+  border-bottom: 2px solid black;
+}
+
+.menu-movil-closed {
+  display: none;
+}

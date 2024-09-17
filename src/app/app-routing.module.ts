@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AllSkillsComponent } from './Components/all-skills/all-skills.component';
-import { AllComponent } from './Components/all/all.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './error/error.component';
+import { PortafolioComponent } from './module/portafolio-2025/portafolio.component';
 
 const routes: Routes = [
-  {path: 'all', component: AllComponent},
-  { path: '', pathMatch: 'full', redirectTo: 'all'},
-  {path: 'allSkills', component: AllSkillsComponent},
-  { path: '**', pathMatch: 'full', redirectTo: 'all'}
+
+  { path: 'portfolio', loadChildren: () => import('./module/portafolio-2025/portafolio.module').then(m => m.PortafolioModule) },
+  { path: 'error', component: ErrorComponent },
+  { path: '', redirectTo: '/portfolio', pathMatch: 'full' }
+
 ];
 
 @NgModule({

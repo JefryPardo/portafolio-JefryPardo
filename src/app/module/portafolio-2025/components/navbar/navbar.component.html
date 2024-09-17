@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <div class="navbar-container">
+
+    <a href="#" class="navbar-brand">JefryPardo</a>
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <img *ngIf="!isMenuOpen" src="/assets/img/menu.png" alt="Abrir menu">
+      <img *ngIf="isMenuOpen" src="/assets/img/close.png" alt="Cerrar menu">
+    </button>
+    
+    <ul class="navbar-nav" [ngClass]="{ 'menu-open': isMenuOpen }">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Sobre mí</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Habilidades</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Trabajo</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="contact-link">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="navbar-nav-movil" [ngClass]="{ 'menu-movil-open': isMenuOpen, 'menu-movil-closed': !isMenuOpen }">
+  <li class="nav-item-movil fila-superior">
+    <a href="#" class="nav-link-movil">Sobre mí</a>
+  </li>
+  <li class="nav-item-movil">
+    <a href="#" class="nav-link-movil">Habilidades</a>
+  </li>
+  <li class="nav-item-movil">
+    <a href="#" class="nav-link-movil">Trabajo</a>
+  </li>
+  <li class="nav-item-movil fila-inferior">
+    <a href="#" class="nav-link-movil">Contacto</a>
+  </li>
+</ul>
