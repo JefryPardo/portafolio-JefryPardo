@@ -1,20 +1,138 @@
 .navbar {
-  background-color: #f0f2f5;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 90px;
+  z-index: 1000;
+  padding: 15px 0px;
   display: flex;
-  z-index: 5;
+  justify-content: space-between;
   align-items: center;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  
+  /* Fondo con gradiente para escritorio */
+  background: linear-gradient(to right, #ffec3d 50.01%, #ffffff 50%);
   border-bottom: 2px solid black;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: black;
+    z-index: 1;
+  }
+
+  .navbar-container {
+    width: 100%;
+    padding: 0 10%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2; /* Para asegurar que el contenido esté por encima de la línea */
+
+    @media (max-width: 1500px) {
+      padding: 0 5%;
+    }
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+  }
+
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 1500px) {
+      display: none;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 700;
+      font-size: 1.0rem;
+
+      .nav-link {
+        font-size: 1rem;
+        color: black;
+        text-decoration: none;
+        padding: 10px 20px;
+        position: relative;
+        overflow: hidden;
+        z-index: 4;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background: url('/assets/img/pen-brushes-amarillo.svg') no-repeat left bottom;
+          background-size: 0%;
+          background-repeat: no-repeat;
+          transition: background-size 0.4s ease-in-out;
+          z-index: -1;
+        }
+
+        &:hover::before {
+          background-size: 100%;
+          background-position: left bottom;
+        }
+      }
+
+      .contact-link {
+        position: relative;
+        background-color: white;
+        border: 2px solid black;
+        color: black;
+        border-radius: 0;
+        padding: 10px 20px;
+        box-shadow: none;
+        text-decoration: none;
+        transition: none;
+        z-index: 4;
+
+        &::before {
+          content: '';
+          z-index: -1;
+          position: absolute;
+          border: 2px solid black;
+          top: 0.5px;
+          left: 0.1px;
+          width: 102%;
+          height: 105%;
+          background-color: #ffec3d;
+          border-radius: 0;
+          transform: translate(1px, 1px);
+          transition: opacity 0.4s ease-in-out;
+        }
+
+        &:hover::before {
+          opacity: 0;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
 
   .menu-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-  
+
     img {
       width: 50px;
       height: 50px;
@@ -23,18 +141,18 @@
       -moz-user-select: none;
       -ms-user-select: none;
     }
-  
+
     &:focus {
       outline: none;
       box-shadow: none;
     }
-  
-    @media (max-width: 1600px) {
+
+    @media (max-width: 1500px) {
       display: block;
       position: relative;
       margin-left: auto;
     }
-  
+
     @media (max-width: 400px) {
       img {
         width: 40px;
@@ -43,115 +161,21 @@
     }
   }
 
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 10%;
-  margin: 0 auto;
-
-  @media (max-width: 1600px) {
-    padding: 0 5%;
-  }
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: black;
-  text-decoration: none;
-}
-
-.navbar-nav {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-
-  @media (max-width: 1600px) {
-    display: none;
-  }
-
-  .nav-item {
+  /* Modo móvil: Fondo completamente amarillo */
+  @media (max-width: 1500px) {
+    background: #ffec3d;
+    border-top: 2px solid black; /* Si no deseas la línea en modo móvil */
     
-    position: relative;
-    font-weight: 700;
-    font-size: 1.0rem;
-
-    .nav-link {
-      font-size: 1rem;
-      color: black;
-      text-decoration: none;
-      padding: 10px 20px;
-      position: relative;
-      overflow: hidden;
-      z-index: 4;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background: url('/assets/img/pen-brushes-amarillo.svg') no-repeat left bottom;
-        background-size: 0%;
-        background-repeat: no-repeat;
-        transition: background-size 0.4s ease-in-out;
-        z-index: -1;
-      }
-
-      &:hover::before {
-        background-size: 100%;
-        background-position: left bottom;
-      }
-    }
-
-    .contact-link {
-      position: relative;
-      background-color: white;
-      border: 2px solid black;
-      color: black;
-      border-radius: 0;
-      padding: 10px 20px;
-      box-shadow: none;
-      text-decoration: none;
-      transition: none;
-      z-index: 4;
-
-      &::before {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        border: 2px solid black;
-        top: 0.5px;
-        left: 0.1px;
-        width: 102%;
-        height: 105%;
-        background-color: #ffec3d;
-        border-radius: 0;
-        transform: translate(1px, 1px);
-        transition: opacity 0.4s ease-in-out;
-      }
-    
-      &:hover::before {
-        opacity: 0;
-      }
-
-      &:focus {
-        outline: none;
-      }
+    &::before {
+      display: none; /* Oculta la línea vertical en modo móvil */
     }
   }
 }
 
 .navbar-nav-movil {
-  
   display: none;
-  
-  @media (max-width: 1600px) {
+
+  @media (max-width: 1500px) {
     display: flex;
   }
 }
@@ -160,7 +184,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 90px;
+  top: 85px;
   width: 100%;
   z-index: 3;
   padding: 0;
@@ -192,12 +216,10 @@
 }
 
 .fila-superior {
-
   border-top: 2px solid black;
 }
 
 .fila-inferior {
-
   border-bottom: 2px solid black;
 }
 

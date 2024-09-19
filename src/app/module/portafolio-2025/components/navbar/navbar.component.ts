@@ -15,7 +15,7 @@ export class NavbarComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    if (window.innerWidth > 1600) {
+    if (window.innerWidth > 1500) {
       this.isMenuOpen = false;
     }
   }
