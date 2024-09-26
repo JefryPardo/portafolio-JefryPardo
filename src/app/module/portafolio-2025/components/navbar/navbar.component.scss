@@ -1,4 +1,5 @@
 .navbar {
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -8,10 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   
-  /* Fondo con gradiente para escritorio */
-  background: linear-gradient(to right, #ffec3d 50.01%, #ffffff 50%);
+  background: linear-gradient(to right, #ffec3d 60.01%, #f0f2f5 40%);
   border-bottom: 2px solid black;
 
   &::before {
@@ -19,7 +18,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 60%;
     width: 2px;
     background-color: black;
     z-index: 1;
@@ -32,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2; /* Para asegurar que el contenido esté por encima de la línea */
+    z-index: 2;
 
     @media (max-width: 1500px) {
       padding: 0 5%;
@@ -49,7 +48,7 @@
   .navbar-nav {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 0.5rem;
 
     @media (max-width: 1500px) {
       display: none;
@@ -90,6 +89,7 @@
       }
 
       .contact-link {
+
         position: relative;
         background-color: white;
         border: 2px solid black;
@@ -181,15 +181,16 @@
 }
 
 .navbar-nav-movil {
+  
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 85px;
   width: 100%;
   z-index: 3;
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #f0f2f5;
 
   .nav-item-movil {
     width: 100%;
