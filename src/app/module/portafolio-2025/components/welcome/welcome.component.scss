@@ -1,0 +1,396 @@
+.about-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  
+    .left-side {
+      flex: 0 0 60%;
+      background-color: #ffec3d;
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid black;
+    }
+  
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      background-color: #f0f2f5;
+      border-bottom: 2px solid black;
+    }
+  
+    .center-line {
+      width: 2px;
+      background-color: black;
+      position: absolute;
+      left: 60%;
+      top: 0;
+      bottom: 0;
+    }
+  
+    @media (max-width: 1500px) {
+      flex-direction: column;
+      margin-top: 60px;
+  
+      .left-side,
+      .right-side {
+        width: 100%;
+        height: 50%;
+      }
+  
+      .center-line {
+        display: none;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .right-side {
+        display: none;
+      }
+  
+      .left-side {
+        flex: 1;
+        height: 100vh;
+      }
+    }
+  }
+    
+  
+  .tamanio1 {
+    font-size: 3rem;
+    font-weight: 600;
+    
+    @media (max-width: 1500px) {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+  
+  }
+  
+  .line1 {
+    padding-top: 5px;
+  }
+  
+  .tamanio2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .tamanio3, .tamanio3Weight {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .tamanio4 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .hola {
+  
+    font-weight: 600;
+  }
+  
+  .tamanio5 {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+  
+  .inlineSpace {
+    white-space: nowrap;
+  }
+  
+  .inline2 {
+    line-height: 0.5;
+  }
+  
+  .marcador1 {
+  
+    padding: 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: url('/assets/img/pen-brushes-blanco.svg') no-repeat left bottom;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease-in-out;
+  }
+  
+  .marcador2 {
+  
+    padding: 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: url('/assets/img/pen-brushes-rosado.svg') no-repeat left bottom;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s ease-in-out;
+  }
+  
+  .container-redes {
+    margin-top: 30px;
+  
+    .icon {
+      height: 50px;
+      width: auto;
+    }
+  }
+  
+  
+  
+  .contenido-principal {
+    
+    z-index: 3;
+  }
+  
+  .primary-image {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    animation: levitate 3s ease-in-out infinite, rotate 5s linear infinite;
+  }
+  
+  .secondary-image {
+  
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    right: 85%;
+    bottom: none;
+    z-index: -1;
+    
+    animation: levitate 4s ease-in-out infinite, rotate 5s linear infinite;
+    
+    @media (max-width: 600px) {
+      right: 3%;
+      bottom: 65.5%;
+    }
+  
+  }
+  
+  @keyframes levitate {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .simple-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    padding: 0px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+  
+    &::before {
+      content: '';
+      display: block;
+      background-image: url('/assets/img/arrow-basic.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); // Transición con curva de resorte.
+  
+      @media (max-width: 600px) {
+        width: 40px;
+        height: 40px;
+      }
+  
+    }
+  
+    &:hover::before {
+      animation: springEffect 0.6s ease-in-out; // Activa la animación al poner el mouse.
+    }
+  
+    @keyframes springEffect {
+      0% {
+        transform: scaleX(1); // Escala inicial normal.
+      }
+      30% {
+        transform: scaleX(1.3); // Se estira ligeramente hacia los lados.
+      }
+      50% {
+        transform: scaleX(0.9); // Se contrae un poco para simular el efecto del resorte.
+      }
+      70% {
+        transform: scaleX(1.1); // Rebota de nuevo hacia afuera.
+      }
+      100% {
+        transform: scaleX(1); // Vuelve a su forma original.
+      }
+    }
+  }
+  
+  .more-info {
+    display: flex;
+    align-items: center;
+    font-size: 20px; // Ajusta según tu diseño
+    margin-top: 10px; // Espacio superior
+    font-weight: 600;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 100px;
+  
+    .line {
+      flex: 1; // Hace que la línea ocupe el espacio restante
+      height: 2px; // Grosor de la línea
+      background-color: black; // Color de la línea
+      margin-left: 10px; // Espacio entre el texto y la línea
+    }
+  
+    .circle {
+      position: relative; // Necesario para el posicionamiento del punto
+      width: 12px; // Ajusta el tamaño del círculo
+      height: 12px; // Ajusta el tamaño del círculo
+      border: 2px solid black; // Borde negro
+      background-color: white; // Fondo blanco
+      border-radius: 50%; // Hace que sea un círculo
+      margin-left: 0; // Sin margen para que esté pegado a la línea
+  
+      &::after {
+        content: '';
+        position: absolute; // Posiciona el punto dentro del círculo
+        width: 6px; // Tamaño del punto
+        height: 6px; // Tamaño del punto
+        background-color: black; // Color del punto
+        border-radius: 50%; // Hace que sea un círculo
+        top: 50%; // Centra verticalmente
+        left: 50%; // Centra horizontalmente
+        transform: translate(-50%, -50%); // Ajusta para centrar el punto
+      }
+    }
+  }
+  
+  .yellow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: left;
+    position: relative;
+    line-height: 1.1;
+  }
+  
+  .cuadro-negro-left {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 2px solid black;
+    z-index: 0; /* Asegura que esté detrás */
+  }
+  
+  .cuadro-negro {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffec3d;
+    border: 2px solid black;
+    z-index: 0; /* Asegura que esté detrás */
+  }
+  
+  .perfil-image {
+    position: relative; /* Mantiene la posición relativa para que el `z-index` funcione */
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    z-index: 1; /* Asegura que esté delante del `cuadro-negro` */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;
+  }
+  
+  .contenedor1,
+  .contenedor2 {
+    width: 100%;
+  }
+  
+  .contenedor1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    flex-grow: 2;
+  }
+  
+  .contenedor2 {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 10%;
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .img-container {
+    width: 340px;
+    height: 340px;
+    position: relative;
+  }
+  
+  .contenedor-img-container-left {
+  
+    display: none;
+    
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centrar verticalmente */
+      align-items: center; /* Centrar horizontalmente */
+      width: 100%;
+      height: 240px;
+    }
+  }
+  
+  .img-container-left {
+    
+    width: 240px;
+    height: 240px;
+    position: relative;
+  }
+  
+  .contenedor0 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    width: 100%;
+    height: 25%;
+    flex-grow: 1;
+  }
+  
+  .levitating-container {
+    height: 40px;
+    display: flex;
+    
+    z-index: 5;
+  }
+  
+  .levitating-container-l {
+    width: 100%;
+    top: 4%;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .rotate {
+    transform: rotate(90deg);
+    transform-origin: center;
+  }

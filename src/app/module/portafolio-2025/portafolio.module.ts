@@ -8,6 +8,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { PortafolioRoutingModule } from './portafolio-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     SkillsComponent,
     WorkExperienceComponent,
-    HomeComponent
+    HomeComponent,
+    WelcomeComponent
   ],
 
   imports: [
