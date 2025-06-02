@@ -1,0 +1,57 @@
+.grid-layout {
+  display: flex;
+  height: 100vh;
+  border-bottom: 2px solid black;
+  max-height: 900px;  // límite máximo de altura
+
+  .left-panel {
+    width: 340px;
+    display: grid;
+    grid-template-columns: repeat(5, 66px);
+    grid-auto-rows: 66px;
+    gap: 1px;
+    padding: 3px;
+
+    @media (max-width: 600px) {
+      display: none;  /* Oculta lado izquierdo en móvil */
+    }
+  }
+
+  .divider {
+    width: 3px;
+    background-color: black;
+
+    @media (max-width: 600px) {
+      display: none;  /* Oculta la línea divisoria en móvil */
+    }
+  }
+
+  .right-panel {
+    width: 100%;
+    transition: background-color 0.2s ease;
+    background-color: #ffec3d;
+
+    @media (max-width: 600px) {
+      width: 100%;  // Ocupa todo el ancho al ocultar el lado izquierdo
+      background-color: white;  // o background-color: transparent; si prefieres sin color
+    }
+
+  }
+}
+
+.tetris-block {
+  width: 66px;
+  height: 66px;
+  display: block;          // evita inline spacing
+  border-radius: 8px;
+  line-height: 0;          // extra seguridad
+}
+
+.bloque-negro {
+  filter: brightness(0); // Vuelve negro el SVG sin editar el archivo
+}
+
+.tetris-space {
+  width: 66px;
+  height: 66px;
+}

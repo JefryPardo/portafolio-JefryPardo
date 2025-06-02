@@ -1,0 +1,24 @@
+<div class="grid-layout">
+    <div class="left-panel">
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+        
+        <ng-container *ngFor="let tipo of cuadros">
+            <div *ngIf="tipo === 0" class="tetris-space"></div>
+            <img *ngIf="tipo === 1" src="/assets/img/cuadro.svg" class="tetris-block" />
+            <img *ngIf="tipo === 2" src="/assets/img/cuadro.svg" class="tetris-block bloque-negro" />
+        </ng-container>
+        
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+        <div class="tetris-space"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="right-panel">
+        <!-- Contenido derecho -->
+    </div>
+</div>
