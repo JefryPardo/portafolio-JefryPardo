@@ -1,7 +1,7 @@
 .grid-layout {
   display: flex;
-  height: 100vh;
-  border-bottom: 2px solid black;
+  height: 140vh;
+  border-bottom: 2px solid #1a1a1a;
   max-height: 900px;  // límite máximo de altura
 
   .left-panel {
@@ -11,8 +11,9 @@
     grid-auto-rows: 66px;
     gap: 1px;
     padding: 3px;
+    background-color: #1a1a1a;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1500px) {
       display: none;  /* Oculta lado izquierdo en móvil */
     }
   }
@@ -28,14 +29,22 @@
 
   .right-panel {
     width: 100%;
-    transition: background-color 0.2s ease;
-    background-color: #ffec3d;
+    height: 100%;
+    position: relative; /* necesario para que el hijo se posicione respecto a este contenedor */
 
     @media (max-width: 600px) {
       width: 100%;  // Ocupa todo el ancho al ocultar el lado izquierdo
       background-color: white;  // o background-color: transparent; si prefieres sin color
     }
 
+  }
+
+  .gato-fijo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 600px;  /* puedes ajustar el tamaño si es necesario */
+    height: auto;
   }
 }
 
@@ -54,4 +63,158 @@
 .tetris-space {
   width: 66px;
   height: 66px;
+}
+
+.contenedor-gato {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-shrink: 0;
+
+  @media (max-width: 1500px) {
+    display: none;
+  }
+}
+
+.contenedor-superior-gato {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contenedor-inferior-gato {
+  height: 300px; /* Altura fija para el gato */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.gato-fijo {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+@media (max-width: 1500px) {
+  .contenedor-gato {
+    display: none;
+  }
+}
+
+.about-contenedor {
+  display: flex;
+  height: 100%;         /* Ocupa toda la altura de la pantalla */
+  position: relative;
+}
+
+.leyenda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* Centra verticalmente */
+  align-items: flex-start;    /* Alinea a la izquierda (puedes cambiar a center si quieres centrar también horizontalmente) */
+  padding-left: 80px;
+}
+
+@media (max-width: 1500px) {
+  .leyenda {
+    padding-left: 16px;
+    padding-right: 0px;
+    margin: 20px;
+  }
+}
+
+.leyenda-titulo-principal {
+  font-size: 3rem;     /* grande */
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.leyenda-titulo-secundario {
+  font-size: 1.5rem;   /* más pequeño */
+  font-weight: bold;
+  margin: 0;
+  line-height: 0.5;
+}
+
+.leyenda-texto {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.leyenda-texto span {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.levitating-container-l {
+  width: 100%;
+  top: 4%;
+  z-index: 2;
+  position: relative;
+}
+
+.leyenda-wrapper {
+  position: relative;
+  display: inline-block; /* para que tome solo el tamaño del contenido */
+}
+
+.leyenda-caja {
+  position: relative; /* para estar arriba */
+  // background-color: #ffec3d;
+  background-color: white;
+  border: 2px solid black;
+  padding: 20px;
+  z-index: 2;
+}
+
+.leyenda-sombra {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 20px; /* para que sea 10px más arriba que leyenda-caja */
+  // background-color: white;
+  background-color: #ffec3d;
+  border: 2px solid black;
+  z-index: 1;
+}
+
+.gato-movil {
+  width: 40px;
+  height: auto;
+  display: none; /* por defecto oculto */
+  position: absolute; /* o relativo según quieras posicionarlo */
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 1500px) {
+  .gato-movil {
+    display: block;
+  }
+}
+
+.pixel-heart {
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  grid-auto-rows: 30px;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cuadro-svg {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0); /* lo vuelve negro */
+  display: block;
 }

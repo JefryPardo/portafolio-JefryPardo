@@ -1,1 +1,40 @@
-<p>work-experience works!</p>
+<div class="work-experience-layout">
+    <div class="cuadros-fondo">
+        <ng-container *ngFor="let tipo of cuadros">
+        <div *ngIf="tipo === 0" class="tetris-space"></div>
+        <img *ngIf="tipo === 1" src="/assets/img/cuadro.svg" class="tetris-block" />
+        <img *ngIf="tipo === 2" src="/assets/img/cuadro.svg" class="tetris-block bloque-negro" />
+        </ng-container>
+    </div>
+
+    <div class="contenido">
+        <div class="contenido-izquierda">
+            <img src="/assets/img/mago.png" alt="imagen" />
+        </div>
+        <div class="contenido-derecha">
+            <div class="leyenda-wrapper">
+                <div class="leyenda-sombra"></div>
+                <div class="leyenda-caja">
+
+                    <h1>Empresas donde he trabajado</h1>
+
+                    <div class="experiencia-bloque">
+                        <h3>Tu Compra</h3>
+                        <h5>(Nov 2021 - Nov 2024)</h5>
+                        <p>
+                            Durante tres años formé parte de TuCompra, una pasarela de pagos Colombiana. Allí trabajé principalmente con Java y Spring Boot, construyendo microservicios desde cero y entendiendo a fondo cómo funciona un flujo transaccional. Al estar tan cerca del corazón de los pagos digitales, aprendí la importancia de escribir código seguro y manejar datos sensibles con responsabilidad. Uno de los proyectos que más disfruté fue la integración del medio de pago Nequi, donde participé desde el backend hasta el frontend para que todo el flujo funcionara sin tropiezos.
+                        </p>
+                    </div>
+
+                    <div class="experiencia-bloque">
+                        <h3>Codesa</h3>
+                        <h5>(Nov 2024 - Actualmente)</h5>
+                        <p>
+                            Desde hace seis meses estoy trabajando en Codesa, donde soy parte del equipo de producción encargado de los bugs. En este rol me desempeño como desarrollador full stack, utilizando nuevamente Java con Spring Boot y Angular. En Codesa he aprendido a trabajar con micro frontends y a integrarme en un equipo grande, donde resolver errores de producción implica seguir procesos claros: coordinar con compañeros, preparar documentación, aplicar hotfixes y generar merges efectivos. Aquí cada solución es un trabajo en conjunto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,7 +11,7 @@ export class AboutComponent {
 
   tipos = ['space', 'white', 'black'];
 
-  maxCuadros = 55;
+  maxCuadros = 60;
 
   constructor() {
     this.generarCuadros();

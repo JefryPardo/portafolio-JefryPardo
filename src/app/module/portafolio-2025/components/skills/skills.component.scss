@@ -1,0 +1,310 @@
+.skills-container {
+  position: relative;          /* Necesario para posicionar los flotantes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140vh;
+  max-height: 900px;
+  border-bottom: 2px solid #1a1a1a;
+  overflow: hidden;
+}
+
+.skill-floating {
+  position: absolute;
+//   width: 100px;
+  height: 50px;
+  background-color: white;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.skill-ukelele {
+  top: 40%;
+  left: 50%;
+  transform: translate(-55%, -260%);
+  animation-delay: 0s;
+}
+
+.skill-illustrator {
+  top: 40%;
+  left: 50%;
+  transform: translate(-45%, 520%);
+  animation-delay: 0s;
+  width: 300px;
+}
+
+.skill-java {
+  top: 40%;
+  left: 50%;
+  transform: translate(-190%, 20%);
+  animation-delay: 0s;
+}
+
+.skill-angular {
+  top: 40%;
+  left: 50%;
+  transform: translate(85%, 20%);
+  animation-delay: 0s;
+}
+
+.skill-spring_boot {
+  top: 40%;
+  left: 50%;
+  transform: translate(-280%, 150%);
+  animation-delay: 0s;
+}
+
+.skill-sql {
+  top: 40%;
+  left: 50%;
+  transform: translate(-250%, 300%);
+  animation-delay: 0s;
+}
+
+.skill-linux {
+  top: 40%;
+  left: 50%;
+  transform: translate(150%, 300%);
+  animation-delay: 0s;
+}
+
+.skill-typescript {
+  top: 40%;
+  left: 50%;
+  transform: translate(180%, 150%);
+  animation-delay: 0s;
+}
+
+.circles-wrapper {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* para que no interfiera con clicks */
+}
+
+.circle-aura {
+  position: absolute;
+  border: 3px solid black;
+  animation: rotateSlow 40s linear infinite;
+}
+
+.aura-1 {
+  width:  600px;
+  height: 600px;
+  animation-duration: 30s;
+}
+
+.aura-2 {
+  width:  800px;
+  height: 800px;
+  animation: rotateReverse 50s linear infinite;
+}
+
+.aura-3 {
+  width:  1000px;
+  height: 1000px;
+  animation-duration: 70s;
+}
+
+.aura-4 {
+  width:  1200px;
+  height: 1200px;
+  animation: rotateSlow 90s linear infinite;
+}
+
+.aura-5 {
+  width:  1400px;
+  height: 1400px;
+  animation: rotateReverse 110s linear infinite;
+}
+
+.aura-6 {
+  width:  1600px;
+  height: 1600px;
+  animation: rotateSlow 130s linear infinite;
+}
+
+.aura-7 {
+  width:  1800px;
+  height: 1800px;
+  animation: rotateReverse 150s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes rotateReverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+.skills-container-movil {
+  display: none;
+}
+
+@media (max-width: 1500px) {
+
+    .skills-container-movil {
+        position: relative;          /* Necesario para posicionar los flotantes */
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 30px;
+        height: 140vh;
+        max-height: 900px;
+        border-bottom: 2px solid #1a1a1a;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1500px) {
+  .skills-container {
+    display: none;
+  }
+}
+
+@keyframes levitar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.meditando-movil {
+  height: 400px;
+  z-index: 1;
+  animation: levitar 4s ease-in-out infinite;
+  padding-bottom: 50px;
+
+  @media (max-width: 1500px) {
+    height: 350px;
+  }
+}
+
+.meditando {
+
+    height: 400px;
+    z-index: 1;
+
+    @media (max-width: 1500px) {
+        height: 350px;
+    }
+}
+
+.skills-movil-wrapper {
+  display: flex;
+  flex-direction: row;      /* para que estén lado a lado */
+  align-items: center;      /* centra verticalmente */
+  gap: 15px;                /* espacio entre la imagen y el rectángulo */
+}
+
+.skill-floating-movil {
+  width: 120px;
+  height: 50px;
+  border: 3px solid black;
+  background-color: white;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.skill-java-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 3%);
+  animation-delay: 0s;
+  width: 200px;
+}
+
+.skill-angular-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 220%);
+  animation-delay: 0s;
+  width: 200px;
+}
+
+.skill-sql-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(5%, 330%);
+  animation-delay: 0s;
+}
+
+.skill-linux-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(-100%, 330%);
+  animation-delay: 0s;
+}
+
+.skill-spring_boot-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(5%, 110%);
+  animation-delay: 0s;
+}
+
+.skill-typescript-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(-100%, 110%);
+  animation-delay: 0s;
+}
+
+.skill-illustrator-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 440%);
+  animation-delay: 0s;
+  width: 200px;
+}
+
+.skill-ukelele-movil {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 550%);
+  animation-delay: 0s;
+  width: 300px;
+}
+
+.skill-floating {
+  position: absolute;
+  min-width: 100px;
+  height: 50px;
+  background-color: white;
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.titulo-skills {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0 0 20px 0; /* margen abajo para separación */
+  font-weight: bold;
+  font-size: 1.8rem;
+  user-select: none;
+}
+
+@media (max-width: 1500px) {
+  .titulo-skills {
+    font-size: 1.4rem; /* un poco más pequeño */
+  }
+}

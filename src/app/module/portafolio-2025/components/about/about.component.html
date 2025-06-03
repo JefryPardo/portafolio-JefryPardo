@@ -1,24 +1,98 @@
 <div class="grid-layout">
     <div class="left-panel">
         <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
         
         <ng-container *ngFor="let tipo of cuadros">
             <div *ngIf="tipo === 0" class="tetris-space"></div>
             <img *ngIf="tipo === 1" src="/assets/img/cuadro.svg" class="tetris-block" />
-            <img *ngIf="tipo === 2" src="/assets/img/cuadro.svg" class="tetris-block bloque-negro" />
+            <img *ngIf="tipo === 2" src="/assets/img/cuadro.svg" class="tetris-block" />
         </ng-container>
         
-        <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
-        <div class="tetris-space"></div>
     </div>
+    
     <div class="divider"></div>
+    
     <div class="right-panel">
-        <!-- Contenido derecho -->
+    
+    <div class="about-contenedor">
+        <div class="leyenda">
+            <div class="leyenda-wrapper">
+                <div class="leyenda-sombra"></div>
+                <div class="leyenda-caja">
+                    <h1 class="leyenda-titulo-principal">Hola</h1>
+                    <h2 class="leyenda-titulo-secundario">mi nombre es Jefry.</h2>
+                    <p class="leyenda-texto">
+                        <span>Vivo en Cali, Colombia y paso mis días entre líneas de código, ideas creativas y uno que otro café.</span>
+                        <span>Me muevo en el mundo del desarrollo full stack, aunque mi fuerte es el backend disfruto mucho explorar todo el ecosistema, mantenerme curioso y seguir aprendiendo.</span>
+                        <span>También me gusta sumergirme en cosas que me inspiran fuera del código: el arte, el diseño, la fotografía, la ilustración... todo lo que tenga ese algo visual que conecta con las emociones.</span>
+                        <span>Este es mi espacio, donde mezclo lo que sé hacer con lo que disfruto aprender.</span>
+                    </p>
+                    <img src="/assets/img/cat.png" class="gato-movil" />        
+                </div>
+            </div>
+        </div>
+        <div class="contenedor-gato">
+            <div class="contenedor-superior-gato">
+                <div class="pixel-heart">
+  <!-- Fila 1 -->
+                    <div></div>
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <div></div>
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <div></div>
+
+                    <!-- Fila 2 -->
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+
+                    <!-- Fila 3 -->
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+
+                    <!-- Fila 4 -->
+                    <div></div>
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <div></div>
+
+                    <!-- Fila 5 -->
+                    <div></div>
+                    <div></div>
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <div></div>
+                    <div></div>
+
+                    <!-- Fila 6 -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <img src="/assets/img/cuadro.svg" class="cuadro-svg" />
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
+            <div class="contenedor-inferior-gato">
+                <img src="/assets/img/cat.png" class="gato-fijo" />
+            </div>
+        </div>
     </div>
 </div>
