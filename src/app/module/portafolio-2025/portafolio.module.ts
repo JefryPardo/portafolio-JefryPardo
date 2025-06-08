@@ -9,7 +9,10 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
 import { PortafolioRoutingModule } from './portafolio-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { FooterComponent } from './components/footer/footer.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -22,12 +25,15 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     SkillsComponent,
     WorkExperienceComponent,
     HomeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    FooterComponent,
+    ChatComponent
   ],
 
   imports: [
     CommonModule,
-    PortafolioRoutingModule
+    PortafolioRoutingModule,
+    ReactiveFormsModule
   ]
 
 })

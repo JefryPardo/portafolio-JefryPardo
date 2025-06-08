@@ -158,8 +158,8 @@
         display: flex;
         justify-content: center;
         align-items: start;
-        padding-top: 30px;
-        height: 140vh;
+        padding-top: 40px;
+        height: 120vh;
         max-height: 900px;
         border-bottom: 2px solid #1a1a1a;
         overflow: hidden;
@@ -185,7 +185,6 @@
   height: 400px;
   z-index: 1;
   animation: levitar 4s ease-in-out infinite;
-  padding-bottom: 50px;
 
   @media (max-width: 1500px) {
     height: 350px;
@@ -222,7 +221,7 @@
 }
 
 .skill-java-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, 3%);
   animation-delay: 0s;
@@ -230,7 +229,7 @@
 }
 
 .skill-angular-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, 220%);
   animation-delay: 0s;
@@ -238,35 +237,35 @@
 }
 
 .skill-sql-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(5%, 330%);
   animation-delay: 0s;
 }
 
 .skill-linux-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(-100%, 330%);
   animation-delay: 0s;
 }
 
 .skill-spring_boot-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(5%, 110%);
   animation-delay: 0s;
 }
 
 .skill-typescript-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(-100%, 110%);
   animation-delay: 0s;
 }
 
 .skill-illustrator-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, 440%);
   animation-delay: 0s;
@@ -274,7 +273,7 @@
 }
 
 .skill-ukelele-movil {
-  top: 40%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, 550%);
   animation-delay: 0s;
@@ -292,6 +291,7 @@
   justify-content: center;
   font-weight: bold;
 }
+
 .titulo-skills {
   background-color: black;
   color: white;

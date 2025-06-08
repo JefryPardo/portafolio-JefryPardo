@@ -1,7 +1,121 @@
 .grid-layout {
   display: flex;
-  height: 140vh;
-  border-bottom: 2px solid #1a1a1a;
-  max-height: 900px;
-  background-color: #1a1a1a;
+  height: 100%;
+  background-color: #1A1A1A;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFEC3D;
+}
+
+.contact-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #FFEC3D;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form {
+    background-color: #FFEC3D;
+    padding: 40px;
+    border: none;
+    width: 500px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #1A1A1A;
+    border: 2px solid #FFEC3D;
+    color: #FFEC3D;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #FFEC3D;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #1A1A1A;
+    color: #FFEC3D;
+    font-weight: bold;
+    padding: 14px;
+    border: 2px solid #FFEC3D;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #FFEC3D;
+    color: #1A1A1A;
+    border: 2px solid #000000;
+}
+
+/* Ajustes para pantallas menores o iguales a 1500px */
+@media (max-width: 1500px) {
+  .contact-form {
+    width: 90%;       /* ocupa casi todo el ancho disponible */
+    // padding: 30px 40px; /* menos padding para no verse muy grande */
+  }
+
+  .contact-container h1 {
+    font-size: 2rem; /* reduce un poco el título */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem; /* texto un poco más pequeño */
+  }
+
+  .contact-form button {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .grid-layout {
+    height: 90vh;
+    justify-content: center;
+    padding-top:  30px;
+    padding-bottom: 30px;
+    // align-items: start;
+  }
+}
+
+.success-message {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 60vh;
+  background-color: #FFEC3D;
+  color: #1A1A1A;
+  padding: 15px 25px;
+  border: 2px solid #1A1A1A;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }

@@ -1,12 +1,13 @@
 .about-container {
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
     z-index: 1;
-    max-height: 900px;
+    max-height: 1000px;
   
     .left-side {
+      margin-top: 50px;
       flex: 0 0 60%;
       background-color: #ffec3d;
       display: flex;
@@ -44,7 +45,7 @@
   
       .left-side {
         flex: 1;
-        height: 100vh;
+        height: 100%;
       }
     }
   }
@@ -223,6 +224,28 @@
         transform: scaleX(1); // Vuelve a su forma original.
       }
     }
+
+  }
+
+  @media (max-width: 600px) {
+    .simple-button {
+      padding: 0 10px;
+      font-size: 14px;
+    }
+    .simple-button::before {
+      content: '';
+      display: inline-flex;  /* Cambiado de block a inline-flex */
+      align-items: center;   /* Centrar contenido dentro si tuviera */
+      justify-content: center;
+      background-image: url('/assets/img/arrow-basic.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width:  30px;
+      height: 30px;
+      margin-right: 10px;
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      vertical-align: middle; /* ayuda en inline context */
+    }
   }
   
   .more-info {
@@ -234,6 +257,9 @@
     padding-top: 10%;
     padding-bottom: 10%;
     padding-left: 100px;
+    text-decoration: none; /* quita el subrayado */
+    color: inherit; /* usa el color del texto padre o el que tú le pongas explícitamente */
+    cursor: pointer;
   
     .line {
       flex: 1; // Hace que la línea ocupe el espacio restante
@@ -385,3 +411,9 @@
     transform: rotate(90deg);
     transform-origin: center;
   }
+
+  @media (max-width: 600px) {
+  .left-side {
+    padding-top: 60px; /* o la altura de tu navbar fijo */
+  }
+}

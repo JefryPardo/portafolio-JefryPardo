@@ -3,7 +3,7 @@
 >
   <div class="navbar-container">
 
-    <a href="#" class="navbar-brand">JefryPardo</a>
+    <a href="/portfolio/home#" class="navbar-brand">JefryPardo</a>
     <button class="menu-toggle" (click)="toggleMenu()">
       <img *ngIf="!isMenuOpen" src="/assets/img/menu.png" alt="Abrir menu">
       <img *ngIf="isMenuOpen" src="/assets/img/close.png" alt="Cerrar menu">
@@ -11,16 +11,16 @@
     
     <ul class="navbar-nav" [ngClass]="{ 'menu-open': isMenuOpen }">
       <li class="nav-item">
-        <a href="#" class="nav-link">Sobre mí</a>
+        <a href="/portfolio/home#about" class="nav-link">Sobre mí</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Habilidades</a>
+        <a href="/portfolio/home#skills" class="nav-link">Habilidades</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Trabajo</a>
+        <a href="/portfolio/home#work" class="nav-link">Trabajo</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="contact-link">Contacto</a>
+        <a href="/portfolio/home#contact" class="contact-link">Contacto</a>
       </li>
     </ul>
 
@@ -30,15 +30,15 @@
 
 <ul class="navbar-nav-movil" [ngClass]="{ 'menu-movil-open': isMenuOpen, 'menu-movil-closed': !isMenuOpen }">
   <li class="nav-item-movil fila-superior">
-    <a href="#" class="nav-link-movil">Sobre mí</a>
+    <a href="/portfolio/home#about" class="nav-link-movil" (click)="closeMenu()">Sobre mí</a>
   </li>
   <li class="nav-item-movil">
-    <a href="#" class="nav-link-movil">Habilidades</a>
+    <a href="/portfolio/home#skills" class="nav-link-movil" (click)="closeMenu()">Habilidades</a>
   </li>
   <li class="nav-item-movil">
-    <a href="#" class="nav-link-movil">Trabajo</a>
+    <a href="/portfolio/home#work" class="nav-link-movil" (click)="closeMenu()">Trabajo</a>
   </li>
   <li class="nav-item-movil fila-inferior">
-    <a href="#" class="nav-link-movil">Contacto</a>
+    <a href="/portfolio/home#contact" class="nav-link-movil" (click)="closeMenu()">Contacto</a>
   </li>
 </ul>
