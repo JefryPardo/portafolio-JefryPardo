@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ChatService } from '../../service/chat.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,13 +11,13 @@ export class ContactComponent implements OnInit {
 
   contactForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private chatService: ChatService) {}
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      nombre: ['', Validators.required],
+      correo: ['', [Validators.required, Validators.email]],
+      mensaje: ['', Validators.required]
     });
   }
 
@@ -25,16 +26,30 @@ export class ContactComponent implements OnInit {
   onSubmit(): void {
     this.isSubmitted = true;
 
-    // Ocultar el mensaje después de 3 segundos (opcional)
-    setTimeout(() => {
-      this.isSubmitted = false;
-    }, 3000);
-    // if (this.contactForm.valid) {
-    //   console.log('Formulario enviado:', this.contactForm.value);
-    //   this.contactForm.reset();
+    if (this.contactForm.valid) {
+      // Consumir el endpoint del backend
+      this.chatService.enviarContacto(this.contactForm.value).subscribe({
+        next: () => {
+          console.log('Mensaje enviado correctamente');
+          this.contactForm.reset();
+          setTimeout(() => {
+            this.isSubmitted = false;  // Ocultar mensaje después de 2 segundos
+          }, 2000);
+        },
+        error: (error) => {
+          console.error('Error al enviar el mensaje:', error);
+          setTimeout(() => {
+            this.isSubmitted = false;  // Ocultar mensaje después de 2 segundos
+          }, 2000);
+        }
+      });
 
-    // } else {
-    //   console.log('Formulario no válido');
-    // }
+    } else {
+      console.log('Formulario no válido');
+      this.contactForm.reset();
+      setTimeout(() => {
+        this.isSubmitted = false;  // Ocultar mensaje después de 2 segundos
+      }, 2000);
+    }
   }
 }

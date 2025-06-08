@@ -7,9 +7,9 @@
         <h1>Contáctame</h1>
 
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-            <input type="text" formControlName="name" placeholder="Tu Nombre" />
-            <input type="email" formControlName="email" placeholder="Tu Email" />
-            <textarea formControlName="message" placeholder="Tu Mensaje"></textarea>
+            <input type="text" formControlName="nombre" placeholder="Tu Nombre" />
+            <input type="email" formControlName="correo" placeholder="Tu Email" />
+            <textarea formControlName="mensaje" placeholder="Tu Mensaje"></textarea>
             <button type="submit">Enviar</button>
         </form>
     </div>

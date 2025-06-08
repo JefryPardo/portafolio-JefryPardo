@@ -1,5 +1,6 @@
 import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ChatService } from '../service/chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -18,25 +19,10 @@ export class ChatComponent implements AfterViewChecked, OnInit {
     message: new FormControl('', [Validators.required])
   });
 
+  constructor(private chatService: ChatService) {}
+
   ngOnInit(): void {
     setTimeout(() => this.scrollToBottom(), 0);
-  }
-
-  sendMessage() {
-    const messageControl = this.chatForm.get('message');
-    if (!messageControl) return;
-
-    const messageText = messageControl.value.trim();
-    if (!messageText) return;
-
-    // Enviar mensaje de usuario
-    this.messages.push({ sender: 'user', text: messageText });
-    messageControl.reset();
-
-    // Simular respuesta automática
-    setTimeout(() => {
-      this.messages.push({ sender: 'bot', text: 'Respuesta automática.' });
-    }, 500);
   }
 
   ngAfterViewChecked() {
@@ -47,5 +33,40 @@ export class ChatComponent implements AfterViewChecked, OnInit {
     try {
       this.chatMessages.nativeElement.scrollTop = this.chatMessages.nativeElement.scrollHeight;
     } catch (err) {}
+  }
+
+  sendMessage() {
+    const messageControl = this.chatForm.get('message');
+    if (!messageControl) return;
+
+    const messageText = messageControl.value.trim();
+    if (!messageText) return;
+
+    this.messages.push({ sender: 'user', text: messageText });
+    messageControl.reset();
+
+    this.chatService.chatPortafolio({ prompt: messageText }).subscribe({
+      next: (response: any) => {
+        // Usamos response.mensaje que viene del backend
+        this.messages.push({
+          sender: 'bot',
+          text: response.mensaje,
+        });
+      },
+      error: (err) => {
+        if (err.status === 429) {
+          this.messages.push({
+            sender: 'bot',
+            text:
+              'Has superado el límite de 5 mensajes. Por favor espera 30 minutos antes de enviar más mensajes.',
+          });
+        } else {
+          this.messages.push({
+            sender: 'bot',
+            text: 'Ocurrió un error, intenta de nuevo más tarde.',
+          });
+        }
+      },
+    });
   }
 }
