@@ -1,0 +1,53 @@
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner-container {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  background-color: #FFEC3D;
+  border: 2px solid #FFEC3D;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.square:nth-child(1) {
+  animation-delay: 0s;
+}
+.square:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.square:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.square:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}

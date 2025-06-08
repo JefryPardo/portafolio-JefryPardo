@@ -9,7 +9,13 @@
 
     <div class="contenido">
         <div class="contenido-izquierda">
-            <img src="/assets/img/mago.png" alt="imagen" />
+            <img 
+                src="/assets/img/mago.png" 
+                alt="imagen" 
+                (load)="onImageLoaded()" 
+                (error)="onImageLoaded()" 
+                (loadstart)="onImageStart()"
+            />
         </div>
         <div class="contenido-derecha">
             <div class="leyenda-wrapper">

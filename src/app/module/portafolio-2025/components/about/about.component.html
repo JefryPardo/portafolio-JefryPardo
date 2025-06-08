@@ -27,7 +27,13 @@
                         <span>También me gusta sumergirme en cosas que me inspiran fuera del código: el arte, el diseño, la fotografía, la ilustración... todo lo que tenga ese algo visual que conecta con las emociones.</span>
                         <span>Este es mi espacio, donde mezclo lo que sé hacer con lo que disfruto aprender.</span>
                     </p>
-                    <img src="/assets/img/cat.png" class="gato-movil" />        
+                    <img 
+                        src="/assets/img/cat.png" 
+                        class="gato-movil" 
+                        (load)="onImageLoaded()" 
+                        (error)="onImageLoaded()" 
+                        (loadstart)="onImageStart()"
+                    />        
                 </div>
             </div>
         </div>
@@ -91,7 +97,13 @@
 
             </div>
             <div class="contenedor-inferior-gato">
-                <img src="/assets/img/cat.png" class="gato-fijo" />
+                <img 
+                    src="/assets/img/cat.png" 
+                    class="gato-fijo" 
+                    (load)="onImageLoaded()" 
+                    (error)="onImageLoaded()" 
+                    (loadstart)="onImageStart()"
+                />
             </div>
         </div>
     </div>

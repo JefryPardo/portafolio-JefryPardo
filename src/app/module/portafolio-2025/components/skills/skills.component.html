@@ -1,6 +1,12 @@
 <h1 class="titulo-skills">Lo que más disfruto usar</h1>
 <div class="skills-container">
-    <img class="meditando" src="/assets/img/meditando.png"/>
+    <img 
+      class="meditando" 
+      src="/assets/img/meditando.png"
+      (load)="onImageLoaded()" 
+      (error)="onImageLoaded()" 
+      (loadstart)="onImageStart()"
+    />
     <div class="skill-floating skill-java">Java</div>
     <div class="skill-floating skill-angular">Angular</div>
     <div class="skill-floating skill-spring_boot">Spring Boot</div>
@@ -23,7 +29,15 @@
 
 <div class="skills-container-movil">
   <div class="skills-movil-wrapper">
-    <img class="meditando-movil" src="/assets/img/meditando.png" />
+    
+    <img 
+      class="meditando-movil" 
+      src="/assets/img/meditando.png" 
+      (load)="onImageLoaded()" 
+      (error)="onImageLoaded()" 
+      (loadstart)="onImageStart()" 
+    />
+
     <div class="skill-floating-movil skill-java-movil inicial">Java</div>
     <div class="skill-floating-movil skill-angular-movil">Angular</div>
     <div class="skill-floating-movil skill-spring_boot-movil">Spring Boot</div>

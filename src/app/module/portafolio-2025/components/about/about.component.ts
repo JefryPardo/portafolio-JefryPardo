@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SpinnerService } from 'src/app/spinner/spinner.service';
 
 @Component({
   selector: 'app-about',
@@ -13,7 +14,7 @@ export class AboutComponent {
 
   maxCuadros = 60;
 
-  constructor() {
+  constructor(private spinnerService: SpinnerService) {
     this.generarCuadros();
   }
 
@@ -22,5 +23,13 @@ export class AboutComponent {
       const index = Math.floor(Math.random() * this.tipos.length);
       return index;
     });
+  }
+
+  onImageStart() {
+    this.spinnerService.registerImageLoading();
+  }
+
+  onImageLoaded() {
+    this.spinnerService.unregisterImageLoading();
   }
 }
