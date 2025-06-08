@@ -1,2 +1,4 @@
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div [class.with-navbar-space]="isChatRoute">
+  <router-outlet></router-outlet>
+</div>

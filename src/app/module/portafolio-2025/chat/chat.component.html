@@ -1,1 +1,21 @@
-<p>chat works!</p>
+<div class="chat-outer-container">
+  <div class="chat-inner-container">
+    <!-- Chat Messages -->
+    <div #chatMessages class="chat-messages">
+        <div *ngFor="let message of messages.slice().reverse()" [ngClass]="message.sender">
+            <div class="bubble">{{ message.text }}</div>
+        </div>
+    </div>
+
+    <!-- Chat Input -->
+    <form [formGroup]="chatForm" (ngSubmit)="sendMessage()" class="chat-input">
+      <input type="text"
+             placeholder="Escribe un mensaje..."
+             formControlName="message"
+             [ngClass]="{ invalid: chatForm.get('message')?.invalid && chatForm.get('message')?.touched }"
+             (keydown.enter)="sendMessage()"/>
+
+      <button type="submit" [disabled]="!chatForm.get('message')?.value?.trim()">Enviar</button>
+    </form>
+  </div>
+</div>

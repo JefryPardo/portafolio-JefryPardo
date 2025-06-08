@@ -30,6 +30,9 @@
 
 <ul class="navbar-nav-movil" [ngClass]="{ 'menu-movil-open': isMenuOpen, 'menu-movil-closed': !isMenuOpen }">
   <li class="nav-item-movil fila-superior">
+    <a href="/portfolio/chat" class="nav-link-movil" (click)="closeMenu()">Chat con Bot</a>
+  </li>
+  <li class="nav-item-movil">
     <a href="/portfolio/home#about" class="nav-link-movil" (click)="closeMenu()">Sobre mí</a>
   </li>
   <li class="nav-item-movil">

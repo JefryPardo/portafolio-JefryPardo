@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-portafolio',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class PortafolioComponent {
 
+  isChatRoute = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Cambia '/portfolio/chat' por la ruta exacta de chat
+        this.isChatRoute = event.urlAfterRedirects === '/portfolio/chat';
+      }
+    });
+  }
 }
